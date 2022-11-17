@@ -1,0 +1,289 @@
+@import 'fonts';
+
+body {
+    background-color: #303030;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: grid;
+
+    header {
+        display: grid;
+        grid-template: 90px auto / auto 105px 1000px auto;
+        grid-template-areas: "void-start logo header-body void-end" "void-start navigation header-body void-end";
+        
+        .header-body-background {
+            grid-area: 1 / 3 / 3 / 5;
+            background: url(/img/header-background.png) center / cover no-repeat;
+            border-radius: 28px;
+        }
+
+        .header-void-start {
+            grid-area: void-start;
+        }
+
+        .header-void-end {
+            grid-area: void-end;
+        }
+
+        .logo {
+            display: grid;
+            grid-area: logo;
+            height: 56px;
+            width: 56px;
+            border-radius: 8px;
+            background-image: linear-gradient(#651fff, #291475);
+            color: #fff;
+            justify-self: end;
+            align-self: center;
+            justify-content: center;
+            align-content: center;
+            @include fontLato ($fontColor: #fff, $fontWeight: 800, $fontSize: 40px);
+            margin-right: 38px;
+        }
+
+        nav {
+            grid-area: navigation;
+            background-color: #311B92;
+            border-radius: 16px;
+            height: auto;
+            width: 80px;
+            display: grid;
+            row-gap: 40px;
+            justify-self: end;
+            margin-right: 25px;
+            justify-content: center;
+            padding: 30px 0;
+
+            a {
+                height: auto;
+                width: auto;
+            }
+        }
+
+        .header-body {
+            grid-area: header-body;
+            display: grid;
+            align-content: center;
+            padding-right: 200px;
+            border-right: none;
+
+            .annotation {
+                height: auto;
+                max-width: 800px;
+                margin-left: 100px;
+                background: linear-gradient(to right, rgba(156, 39, 176, 0.78), rgba(101, 31, 255, 0.78));
+                border-radius: 34px;
+                padding: 30px 30px 60px;
+                display: grid;
+                align-content: space-around;
+                gap: 30px;
+
+                h1 {
+                    @include fontLato ($fontColor: #fff, $fontWeight: 700, $fontSize: 36px);
+                }
+
+                h2 {
+                    @include fontLato ($fontColor: #fff, $fontWeight: 900, $fontSize: 48px);
+                }
+
+                h3 {
+                    @include fontLato ($fontColor: #fff, $fontWeight: 400, $fontSize: 22px);
+                }
+            }
+        }
+    }
+
+    main {
+        width: 1100px;
+        height: auto;
+        justify-self: center;
+        position: relative;
+        top: -110px;
+
+        .about-me {
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template: 380px auto / 235px 1fr 270px;
+            grid-template-areas: "full-name facts photo" "full-name skills skills";
+
+            .photo {
+                grid-area: photo;
+                width: 100%;
+                height: 345px;
+                background: url(/img/me.png) bottom right / contain no-repeat, linear-gradient(#8957c6, #6388be);
+                border-radius: 26px;
+                display: grid;
+
+                &::after {
+                    content: "";
+                    width: 240px;
+                    height: 355px;
+                    border: 2px solid #651fff;
+                    border-radius: 24px;
+                    justify-self: center;
+                    position: relative;
+                    bottom: -21px;
+                }
+            }
+
+            .interesting-facts {
+                grid-area: facts;
+                display: grid;
+                grid-template: 5fr 3fr / 1fr 1fr 1fr;
+                grid-template-areas: "chess education autostop" "chess-descr education-descr autostop-descr";
+                row-gap: 10px;
+
+                svg{
+                    width: 60px; 
+                    height: 60px;
+                    fill: #D6BD96;
+                    justify-self: center;
+                    align-self: end;
+                }
+
+                p {
+                    @include fontLato ($fontColor: #D6BD96, $fontWeight: 400, $fontSize: 18px);
+                    justify-self: center;
+                    text-align: center;
+                }
+
+                .chess {
+                    grid-area: chess;
+                }
+
+                .autostop {
+                    grid-area: autostop;
+                }
+
+                .education {
+                    grid-area: education;
+                    fill: none;
+                    stroke:#D6BD96;
+                    stroke-width: 1;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-miterlimit: 10;
+                }
+
+                .chess-descr {
+                    grid-area: chess-descr;
+                }
+
+                .autostop-descr {
+                    grid-area: autostop-descr;
+                }
+
+                .education-descr {
+                    grid-area: education-descr;
+                }
+            }
+
+            h5 {
+                grid-area: full-name;
+                @include fontLato ($fontColor: rgba(0, 0, 0, 0.54), $fontWeight: 400, $fontSize: 100px);
+                writing-mode: vertical-rl;
+                transform: rotate(180deg);
+                text-align: center;
+                padding-bottom: 200px;
+                max-height: 1490px;
+            }
+
+            .expertise {
+                grid-area: skills;
+                display: grid;
+                grid-template: 80px 1fr / 10px 1fr 130px;
+
+                .line {
+                    grid-area: 1 / 2 / 2 / 3;
+                    border-bottom: 2px solid #651fff;
+                    border-right: 2px solid #651fff;
+                }
+
+                h6 {
+                    @include fontLato ($fontColor: #651fff, $fontWeight: 900, $fontSize: 24px);
+                }
+
+                .skills {
+                    grid-area: 2 / 2 / 3 / 3;
+                    border-left: 2px solid #651fff;
+                    height: auto;
+                    display: grid;
+                    grid-template: auto repeat(5, 1fr) / 1fr;
+                    row-gap: 35px;
+
+                    h6 {
+                        @include fontLato ($fontColor: #651fff, $fontWeight: 900, $fontSize: 24px);
+                        margin: 10px 0 0 20px;
+                    }
+
+                    .skill {
+                        display: grid;
+                        grid-template: 1fr 1fr / 50px 50px 1fr;
+                        grid-template-areas: "circle-point skill-icon skill-name" "circle-point progress-bar progress-bar";
+                        row-gap: 25px;
+
+                        .circle {
+                            grid-area: circle-point;
+                            height: 25px;
+                            width: 25px;
+                            position: relative;
+                            right: 26px;
+                            background-color: #651fff;
+                            border-radius: 50%;
+                            border: 4px solid #303030;
+                            justify-self: center;
+                            align-self: center;
+                        }
+
+                        svg {
+                            fill: #fff;
+                        }
+
+                        h6 {
+                            grid-area: skill-name;
+                            color: #fff;
+                        }
+
+                        .progress {
+                            grid-area: progress-bar;
+                            background-color: rgba(255, 255, 255, 0.12);
+                            width: 100%;
+                            height: 10px;
+                            border-radius: 5px;
+                            display: grid;
+                            grid-template: 1 / 1 / 2 / 2;
+
+                            .progress-bar {
+                                height: 100%;
+                                background-image: linear-gradient(to right, #9C27B0, #651FFF);
+                                border-radius: 5px;
+                            }
+
+                            #html{
+                                width:70%;
+                            }
+
+                            #css{
+                                width:60%;
+                            }
+
+                            #js{
+                                width:40%;
+                            }
+
+                            #react{
+                                width:0%;
+                            }
+
+                            #en{
+                                width:60%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

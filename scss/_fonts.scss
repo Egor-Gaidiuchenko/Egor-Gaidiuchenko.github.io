@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
+
+@mixin fontLato ($fontColor: #fff, $fontWeight: 400, $fontSize: 40px) {
+    font-family: 'Lato';
+    color: $fontColor;
+    font-weight: $fontWeight;
+    font-size: $fontSize;
+    margin: 0;
+}

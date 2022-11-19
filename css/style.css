@@ -61,6 +61,7 @@ body header .logo {
   color: #fff;
   font-weight: 800;
   font-size: 40px;
+  line-height: 40px;
   margin: 0;
   margin-right: 38px;
 }
@@ -118,6 +119,7 @@ body header .header-body .annotation h1 {
   color: #fff;
   font-weight: 700;
   font-size: 36px;
+  line-height: 36px;
   margin: 0;
 }
 body header .header-body .annotation h2 {
@@ -125,6 +127,7 @@ body header .header-body .annotation h2 {
   color: #fff;
   font-weight: 900;
   font-size: 48px;
+  line-height: 48px;
   margin: 0;
 }
 body header .header-body .annotation h3 {
@@ -132,6 +135,7 @@ body header .header-body .annotation h3 {
   color: #fff;
   font-weight: 400;
   font-size: 22px;
+  line-height: 22px;
   margin: 0;
 }
 body main {
@@ -141,6 +145,9 @@ body main {
       justify-self: center;
   position: relative;
   top: -110px;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 60px;
 }
 body main .about-me {
   width: 100%;
@@ -200,6 +207,7 @@ body main .about-me .interesting-facts p {
   color: #D6BD96;
   font-weight: 400;
   font-size: 18px;
+  line-height: 18px;
   margin: 0;
   -ms-grid-column-align: center;
       justify-self: center;
@@ -250,6 +258,7 @@ body main .about-me h5 {
   color: rgba(0, 0, 0, 0.54);
   font-weight: 400;
   font-size: 100px;
+  line-height: 100px;
   margin: 0;
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
@@ -285,6 +294,7 @@ body main .about-me .expertise h6 {
   color: #651fff;
   font-weight: 900;
   font-size: 24px;
+  line-height: 24px;
   margin: 0;
 }
 body main .about-me .expertise .skills {
@@ -307,6 +317,7 @@ body main .about-me .expertise .skills h6 {
   color: #651fff;
   font-weight: 900;
   font-size: 24px;
+  line-height: 24px;
   margin: 0;
   margin: 10px 0 0 20px;
 }
@@ -379,4 +390,183 @@ body main .about-me .expertise .skills .skill .progress #react {
 }
 body main .about-me .expertise .skills .skill .progress #en {
   width: 60%;
+}
+body main .portfolio {
+  width: 100%;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 20px;
+}
+body main .portfolio::before {
+  content: "";
+  position: absolute;
+  left: 100px;
+  width: 300px;
+  height: 400px;
+  background-size: 30px 30px;
+  background-repeat: repeat;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 5px, transparent 5px);
+  z-index: -1;
+}
+body main .portfolio h6 {
+  font-family: "Lato";
+  color: #fff;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+body main .portfolio .work-point {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#9C27B0), to(#651FFF));
+  background-image: linear-gradient(to bottom right, #9C27B0, #651FFF);
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+body main .portfolio .categories {
+  height: auto;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+body main .portfolio .categories .category {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  height: 50px;
+  width: 80%;
+  border-radius: 25px;
+  border: 3px solid #fff;
+  font-family: "Lato";
+  color: #fff;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.12);
+  text-transform: uppercase;
+}
+body main .portfolio .categories .category-active {
+  background-color: #651FFF;
+  border: none;
+  text-transform: uppercase;
+}
+body main .portfolio .works {
+  height: auto;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+body main .portfolio .works .work {
+  height: 300px;
+  width: 80%;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border-radius: 30px;
+  border: 10px solid #424242;
+}
+body main .portfolio .works #work1 {
+  background: url(/img/goGreenCover.png) center/cover no-repeat;
+  background-clip: padding-box;
+}
+body main .portfolio .works #work2 {
+  background: url(/img/chcolateBarCover.png) center/cover no-repeat;
+  background-clip: padding-box;
+}
+body main .blog {
+  height: 300px;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+}
+body main .blog::before {
+  content: "";
+  position: absolute;
+  left: calc(50% - 150px);
+  width: 300px;
+  height: 300px;
+  background-size: 30px 30px;
+  background-repeat: repeat;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.54) 5px, transparent 5px);
+  z-index: -1;
+}
+body main .blog .posts {
+  height: 250px;
+  width: 1100px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 50px auto 50px auto 50px auto;
+  grid-template-columns: repeat(4, auto);
+  -webkit-column-gap: 50px;
+     -moz-column-gap: 50px;
+          column-gap: 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+body main .blog .posts .post {
+  width: 200px;
+  height: 250px;
+  background-color: #424242;
+  border-radius: 25px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 2fr;
+  grid-template-rows: 1fr 2fr;
+}
+body main .blog .posts .post h6 {
+  font-family: "Lato";
+  color: #fff;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+body main .blog .posts .post h3 {
+  font-family: "Lato";
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  margin: 0;
+  line-height: 20px;
+  text-align: left;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 10px;
+}
+body main .contact-me {
+  height: 700px;
 }

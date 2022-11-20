@@ -6,6 +6,20 @@ body {
     padding: 0;
     box-sizing: border-box;
     display: grid;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 100px;
+        width: 300px;
+        height: 300px;
+        background-size: 30px 30px;
+        background-repeat: repeat;
+        background-image: radial-gradient(circle,  rgba(0, 0, 0, 0.54) 5px, transparent 5px);
+        z-index: -1;
+    }
 
     header {
         display: grid;
@@ -428,8 +442,191 @@ body {
         }
 
         .contact-me {
-            height: 700px;
-            
+            height: 500px;
+            background-color: #424242;
+            border-radius: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 60px 40px;
+
+            h2 {
+                @include fontLato ($fontColor: #fff, $fontWeight: 900, $fontSize: 48px);
+                grid-area: 1 / 1 / 2 / 2;
+                justify-self: start;
+
+                span {
+                    display: block;
+                    color: #651FFF;
+                }
+            }
+
+            p {
+                grid-area: 1 / 1 / 2 / 2;
+                @include fontLato ($fontColor: #fff, $fontWeight: 400, $fontSize: 16px);
+                line-height: 30px;
+                justify-self: center;
+                align-self: center;
+                text-align: center;
+
+                span {
+                    display: block;
+                }
+            }
+
+            form {
+                grid-area: 1 / 2 / 2 / 3;
+                display: grid;
+                row-gap: 30px;
+                padding: 60px 60px 130px 0;
+                align-content: space-between;
+
+                input {
+                    height: 30px;
+                    border: none;
+                    background-color: #424242;
+                    border-bottom: 2px solid #d8d8d8;
+                }
+
+                input::placeholder {
+                    color: transparent;
+                }
+
+                input:focus {
+                    border: none;
+                    outline: none;
+                    border-bottom: 2px solid #651FFF;
+                    @include fontLato ($fontColor: #D8D8D8, $fontWeight: 400, $fontSize: 16px);
+                }
+
+                textarea {
+                    border: none;
+                    background-color: #424242;
+                    border-bottom: 2px solid #d8d8d8;
+                }
+
+                textarea:focus {
+                    border: none;
+                    outline: none;
+                    border-bottom: 2px solid #651FFF;
+                    @include fontLato ($fontColor: #D8D8D8, $fontWeight: 400, $fontSize: 16px);
+                }
+
+                textarea::placeholder {
+                    color: transparent;
+                }
+
+                #name,
+                #name-label {
+                    grid-area: 1 / 1 / 2 / 2;
+                    display: grid;
+                }
+
+                #name-label {
+                    @include fontLato ($fontColor: #D8D8D8, $fontWeight: 400, $fontSize: 16px);
+                    align-self: end;
+                    margin-bottom: 7px;
+                }
+
+                #name:focus ~ #name-label {
+                    margin: 0;
+                    align-self: start;
+                    position: relative;
+                    top: -12px;
+                    font-size: 11px;
+                }
+
+                #name:not(:placeholder-shown) ~ #name-label {
+                    margin: 0;
+                    align-self: start;
+                    position: relative;
+                    top: -12px;
+                    font-size: 11px;
+                }
+
+                #name:not(:placeholder-shown) {
+                    @include fontLato ($fontColor: #D8D8D8, $fontWeight: 400, $fontSize: 16px);
+                }
+
+                #email,
+                #email-label {
+                    grid-area: 2 / 1 / 3 / 2;
+                    display: grid;
+                }
+
+                #email-label {
+                    @include fontLato ($fontColor: #D8D8D8, $fontWeight: 400, $fontSize: 16px);
+                    align-self: end;
+                    margin-bottom: 7px;
+                }
+
+                #email:focus ~ #email-label {
+                    margin: 0;
+                    align-self: start;
+                    position: relative;
+                    top: -12px;
+                    font-size: 11px;
+                }
+
+                #email:not(:placeholder-shown) ~ #email-label {
+                    margin: 0;
+                    align-self: start;
+                    position: relative;
+                    top: -12px;
+                    font-size: 11px;
+                }
+
+                #email:not(:placeholder-shown) {
+                    @include fontLato ($fontColor: #D8D8D8, $fontWeight: 400, $fontSize: 16px);
+                }
+
+                #message,
+                #message-label {
+                    height: 125px;
+                    grid-area: 3 / 1 / 4/ 2;
+                    display: grid;
+                }
+
+                #message {
+                    resize: none;
+                }
+
+                #message-label {
+                    @include fontLato ($fontColor: #D8D8D8, $fontWeight: 400, $fontSize: 16px);
+                    display: grid;
+                    align-self: end;
+                    margin-bottom: 7px;
+                }
+
+                #message:focus ~ #message-label {
+                    margin: 0;
+                    align-self: start;
+                    position: relative;
+                    top: -20px;
+                    font-size: 11px;
+                }
+
+                #message:not(:placeholder-shown) ~ #message-label {
+                    margin: 0;
+                    align-self: start;
+                    position: relative;
+                    top: -20px;
+                    font-size: 11px;
+                }
+
+                #message:not(:placeholder-shown) {
+                    @include fontLato ($fontColor: #D8D8D8, $fontWeight: 400, $fontSize: 16px);
+                }
+
+                button {
+                    height: 40px;
+                    background-color: #311b92;
+                    text-transform: uppercase;
+                    border: none;
+                    border-radius: 8px;
+                    @include fontLato ($fontColor: #fff, $fontWeight: 900, $fontSize: 14px);
+                    letter-spacing: 1px;
+                }
+            }
         }
     }
 }

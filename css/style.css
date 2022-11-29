@@ -1528,7 +1528,6 @@ body main .contact-me form button {
   }
   body main .blog .posts .post {
     width: 200px;
-    height: auto;
     -ms-grid-column-align: center;
         justify-self: center;
   }

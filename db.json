@@ -1,0 +1,20 @@
+{
+    "posts": [
+        {
+            "title": "Сделал посты",
+            "article": "Сегодня сделал рендеринг постов. Пока фича далека от задумки?  но как видите я уже могу написать первый пост"
+        },
+        {
+            "title": "Lorem ipsum dolor sit amet.",
+            "article": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo, voluptatibus nam aliquam cumque eaque voluptatem?"
+        },
+        {
+            "title": "Lorem ipsum dolor sit amet.",
+            "article": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo, voluptatibus nam aliquam cumque eaque voluptatem?"
+        },
+        {
+            "title": "Lorem ipsum dolor sit amet.",
+            "article": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo, voluptatibus nam aliquam cumque eaque voluptatem?"
+        }
+    ]
+}

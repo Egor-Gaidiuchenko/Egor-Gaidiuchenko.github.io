@@ -1,20 +1,36 @@
 {
     "posts": [
         {
-            "title": "Сделал посты",
-            "article": "Сегодня сделал рендеринг постов. Пока фича далека от задумки?  но как видите я уже могу написать первый пост"
+            "title": "Posts",
+            "article": "Today I did posts rendering from database. Features far away from ideal, but it is working and I can already do posts"
         },
         {
-            "title": "Lorem ipsum dolor sit amet.",
-            "article": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo, voluptatibus nam aliquam cumque eaque voluptatem?"
+            "title": "To do list",
+            "article": "Today i did to do list. It's already works, but I have work there. I have to style that and make local storage saves"
         },
         {
-            "title": "Lorem ipsum dolor sit amet.",
-            "article": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo, voluptatibus nam aliquam cumque eaque voluptatem?"
+            "title": "Plans",
+            "article": "Today I finished to do list. It doesn't have much features, but I'm not going to improve it. Right now I want create project for improving my server-connection skills"
         },
         {
-            "title": "Lorem ipsum dolor sit amet.",
-            "article": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo, voluptatibus nam aliquam cumque eaque voluptatem?"
+            "title": "Connect Four",
+            "article": "Making Connect Four Game so interesting, I really enjoy it. Now I think how i can create chips from array, for make easily clean field if future. In general this game not easy task for me, but i think i can do it"
+        },
+        {
+            "title": "Connect Four Finished",
+            "article": "Connect Four was done couple days ago. I tried structure it with modules, but I can't. Problem is I call functions from each other and I don't know how apart them. Next time I will think about it on the start of the project"
+        },
+        {
+            "title": "Slider for posts",
+            "article": "Today I made slider for posts. It wasn'n hard, I did it before, but this time I have to call function asynchronously. Little practice, I should make project with more asynchronous code"
+        },
+        {
+            "title": "REST API Countries project",
+            "article": "I made project wich takes API and show you information about country. Also I med a webpack structure in this project. It was pretty fun"
+        },
+        {
+            "title": "Github Pages",
+            "article": "Today I put my To Do List in Github pages. Fist time my work somewhere in the Internet. Next step I will make a sending message from the form in my website and put it on pages too. Also I want remake my markup projects"
         }
     ]
 }

@@ -124,6 +124,24 @@ body {
                 h3 {
                     @include fontLato ($fontColor: #fff, $fontWeight: 400, $fontSize: 22px);
                 }
+
+                .personal-links {
+                    height: 30px;
+                    display: flex;
+                    flex-direction: row;
+
+                    a {
+                        height: 30px;
+                        width: auto;
+                        margin-right: 10px;
+
+                        svg {
+                            height: 100%;
+                            width: auto;
+                            fill: #fff;
+                        }
+                    }
+                }
             }
         }
     }
@@ -274,6 +292,8 @@ body {
                         }
 
                         svg {
+                            width: 50px;
+                            height: 50px;
                             fill: #fff;
                         }
 
@@ -327,6 +347,7 @@ body {
             height: auto;
             display: grid;
             row-gap: 20px;
+            position: relative;
 
             &::before {
                 content: "";
@@ -357,7 +378,7 @@ body {
                 height: auto;
                 width: 100%;
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
                 align-content: space-between;
 
                 label {
@@ -387,7 +408,7 @@ body {
                         clip: rect(0 0 0 0);
                     }
     
-                    .category:checked + .category-label{
+                    .category-label--checked{
                         border: none;
                         background-color: #311B92;
                     }
@@ -409,8 +430,17 @@ body {
                     align-content: center;
                     justify-self: center;
                     border-radius: 30px;
-                    border: 10px solid #424242;
+                    box-shadow: 0 0 0 10px #424242, 0 0 0 15px #303030;
                     box-sizing: border-box;
+
+                    &:hover {
+                        z-index: 1;
+                    }
+
+                    a {
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
 
                 #work1 {
@@ -423,20 +453,18 @@ body {
                     background: url(/img/chcolateBarCover.png) center / cover no-repeat; 
                     background-clip: padding-box; 
                     grid-area: 2 / 2 / 4 / 4;
-                    outline: 5px solid #303030;
                 }
 
                 #work3 {
-                    background: red center / cover no-repeat; 
+                    background: url(/img/connectFour.jpg) center / cover no-repeat; 
                     background-clip: padding-box; 
                     grid-area: 1 / 1 / 3 / 3;
                 }
 
                 #work4 {
-                    background: black center / cover no-repeat; 
+                    background: url(/img/RESTCountries.png) center / cover no-repeat; 
                     background-clip: padding-box; 
                     grid-area: 2 / 2 / 4 / 4;
-                    outline: 5px solid #303030;
                 }
 
                 #work5 {
@@ -449,7 +477,6 @@ body {
                     background: yellow center / cover no-repeat; 
                     background-clip: padding-box; 
                     grid-area: 2 / 2 / 4 / 4;
-                    outline: 5px solid #303030;
                 }
             }
 
@@ -459,9 +486,11 @@ body {
         }
 
         .blog {
-            height: 300px;
+            height: 340px;
             display: grid;
             align-content: space-around;
+            grid-template: repeat(2, auto) / repeat(2, 1fr);
+            position: relative;
 
             &::before {
                 content: "";
@@ -478,32 +507,75 @@ body {
             .posts {
                 height: 250px;
                 width: 1024px;
-                display: grid;
-                grid-template-columns: repeat(4, auto);
-                column-gap: 50px;
                 justify-content: space-between;
+                grid-area: 1 / 1 / 2 / 3;
+                position: relative;
                 overflow: hidden;
 
-                .post {
-                    width: 200px;
-                    height: 250px;
-                    background-color: #424242;
-                    border-radius: 25px;
-                    display: grid;
-                    grid-template-rows: 1fr 2fr;
+                .posts-inner {
+                    width: 100%; 
+                    overflow: hidden;
+                    display: none;
+                    grid-template-columns: repeat(4, auto);
+                    column-gap: 50px;
+                    transition: .2s all;
 
-                    h6 {
-                        @include fontLato ($fontColor: #fff, $fontWeight: 900, $fontSize: 24px);
-                        text-align: center;
-                        align-self: center;
+                    .post {
+                        width: 200px;
+                        height: 250px;
+                        background-color: #424242;
+                        border-radius: 25px;
+                        display: grid;
+                        grid-template-rows: 1fr 2fr;
+
+                        h6 {
+                            @include fontLato ($fontColor: #fff, $fontWeight: 900, $fontSize: 24px);
+                            text-align: center;
+                            align-self: center;
+                        }
+
+                        h3 {
+                            @include fontLato ($fontColor: #fff, $fontWeight: 400, $fontSize: 16px);
+                            line-height: 20px;
+                            text-align: left;
+                            align-self: center;
+                            margin: 10px;
+                        }
+                    }
+                }
+            }
+
+            .left-arrow {
+                width: 50px;
+                height: 50px;
+                grid-area: 2 / 1 / 3 / 2;
+                justify-self: end;
+                
+                svg {
+                    .cls-1 {
+                        fill: transparent;
                     }
 
-                    h3 {
-                        @include fontLato ($fontColor: #fff, $fontWeight: 400, $fontSize: 16px);
-                        line-height: 20px;
-                        text-align: left;
-                        align-self: center;
-                        margin: 10px;
+                    .cls-2 {
+                        fill: #fff;
+                    }
+                }
+            }
+
+            .right-arrow {
+                width: 50px;
+                height: 50px;
+                grid-area: 2 / 2 / 3 / 3;
+                justify-self: start;
+                transform: rotate(180deg);
+
+                svg {
+                    .cls-1 {
+                        fill: transparent;
+                    }
+
+                    .cls-2 {
+                        fill: #fff;
                     }
                 }
             }

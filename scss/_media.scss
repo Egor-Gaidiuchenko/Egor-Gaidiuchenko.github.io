@@ -168,15 +168,35 @@
     body {
         header {
             display: grid;
-            grid-template: 90px repeat(2, auto) / 2fr 1fr;
-            grid-template-areas: "logo settings" "navigation settings" "header-body header-body";
+            grid-template: 90px 1fr / auto 1fr auto;
+            grid-template-areas: "logo navigation settings" "header-body header-body header-body";
             row-gap: 25px;
+
+
+            .logo {
+                margin: 0;
+                margin-right: 5px;
+            }
+
+            nav {
+                transform: rotateX('-90deg');
+                margin: 0;
+                padding: 0;
+                align-items: center;
+                justify-self: space-between;
+                height: auto;
+                width: 100%;
+                display: flex;
+                gap: 10px;
+                margin-right: 5px;
+            }
     
             button {
                 grid-area: settings;
-                margin-right: 20px;
+                margin: 0;
+                margin-top: 30px;
                 align-self: start;
-                margin: 60px 20px 0 0;
+                justify-self: center;
             }
             
             .header-body-background {

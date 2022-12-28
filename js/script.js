@@ -1,3 +1,39 @@
+// work check
+
+const categories = document.querySelector('.categories'),
+      works = document.querySelectorAll('.works'),
+      categoriesLabel = document.querySelectorAll('.category-label');
+
+function worksSelector () {
+    categoriesLabel.forEach((i, item) => {
+        if (i.classList.contains('category-label--checked')) {
+            works.forEach(i => {
+                i.classList.add('hide');
+            });
+
+            works[item].classList.remove('hide');
+        }
+    });
+}
+
+worksSelector();
+
+categories.addEventListener('click', (event) => {
+    const target = event.target;
+
+    if (target.classList.contains('category-label')) {
+        categoriesLabel.forEach(i => {
+            i.classList.remove('category-label--checked');
+        
+            if (i == target) {
+                i.classList.add('category-label--checked');
+            }
+        });
+    }
+
+    worksSelector();
+});
+
 // posts creating
 
 const getData = async (url) => {
@@ -10,9 +46,7 @@ const getData = async (url) => {
     return await res.json();
 };
 
-    console.log(getData("http://localhost:3000/posts"));
-
-function posts () {
+function postsRender () {
     class PostInBlog {
         constructor(title, article, parentSelector, ...classes) {
             this.title = title;
@@ -31,22 +65,76 @@ function posts () {
             this.classes.forEach(className => {element.classList.add(className);});
 
             element.innerHTML=`
-                <div class="post">
-                        <h6>${this.title}</h6>
-                        <h3>${this.article}</h3>
-                </div>
+                <h6>${this.title}</h6>
+                <h3>${this.article}</h3>
             `;
 
             this.parent.append(element);
         }
     }
 
-    getData("http://localhost:3000/posts")
-    .then(data => {
-        data.forEach(({title, article}) => {
-            new PostInBlog(title, article, '.posts').render();
-        });
-});
+    getData("./db.json")
+        .then(data => {
+            data.posts.forEach(({title, article}) => {
+                new PostInBlog(title, article, '.posts-inner').render();
+            });
+        })
+            .then(() => {
+                postsSlider();
+            });
 }
 
-posts();
+postsRender();
+
+// posts slider
+
+function postsSlider() {
+    const posts = document.querySelectorAll('.post'), 
+          postsInner = document.querySelector('.posts-inner'),
+          rightArrow = document.querySelector('.right-arrow'),
+          leftArrow = document.querySelector('.left-arrow'),
+          postsWrapper = document.querySelector('.posts'),
+          postsWrapperPaddingRight = +window.getComputedStyle(postsWrapper).paddingRight.slice(0, -2);
+    let offset = 0;
+
+    postsInner.style.gridTemplateColumns = `repeat(${posts.length}, auto)`;
+
+    function postsShow() {
+        postsInner.style.display = 'grid';
+        postsInner.style.transform = `translateX(-${offset}px)`;
+
+        postsInner.style.width = (posts.length * 250) + 'px';
+    }
+
+    postsShow();
+
+    function movingRight () {
+        offset += 100;
+        
+        if (offset <= (posts.length * 250) - postsWrapper.clientWidth + (postsWrapperPaddingRight)){
+            postsShow();
+        } else if (offset > (posts.length * 250) - postsWrapper.clientWidth + (postsWrapperPaddingRight)) {
+            offset = (posts.length * 250) - postsWrapper.clientWidth + (postsWrapperPaddingRight);
+            postsShow();
+        }
+    }
+
+    function movingLeft () {
+        offset -= 100;
+
+        if (offset > 0){
+            postsShow();
+        } else if (offset <= 0) {
+            offset = 0;
+            postsShow();
+        }
+    }
+
+    rightArrow.addEventListener('click', () => {
+        movingRight();
+    });
+
+    leftArrow.addEventListener('click', () => {
+        movingLeft();
+    });
+}

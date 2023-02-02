@@ -190,6 +190,7 @@ body header .header-body .annotation .personal-links {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  z-index: 10;
 }
 body header .header-body .annotation .personal-links a {
   height: 30px;
@@ -451,10 +452,10 @@ body main .about-me .expertise .skills .skill .progress #js {
   width: 40%;
 }
 body main .about-me .expertise .skills .skill .progress #react {
-  width: 0%;
+  width: 15%;
 }
 body main .about-me .expertise .skills .skill .progress #en {
-  width: 60%;
+  width: 50%;
 }
 body main .portfolio {
   width: 100%;
@@ -499,8 +500,8 @@ body main .portfolio .categories {
   width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
   -ms-flex-line-pack: justify;
       align-content: space-between;
 }
@@ -618,22 +619,13 @@ body main .portfolio .works #work4 {
   grid-area: 2/2/4/4;
 }
 body main .portfolio .works #work5 {
-  background: blue center/cover no-repeat;
+  background: url(../img/pomodoro.jpg) center/cover no-repeat;
   background-clip: padding-box;
   -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
+  -ms-grid-row-span: 3;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: 1/1/3/3;
-}
-body main .portfolio .works #work6 {
-  background: yellow center/cover no-repeat;
-  background-clip: padding-box;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
-  grid-area: 2/2/4/4;
+  -ms-grid-column-span: 3;
+  grid-area: 1/1/4/4;
 }
 body main .portfolio .hide {
   display: none;
@@ -1540,7 +1532,6 @@ body main .contact-me form button {
     row-gap: 20px;
   }
   body main .portfolio .works #work1 {
-    background: url(/img/goGreenCover.png) center/cover no-repeat;
     background-clip: padding-box;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -1549,7 +1540,6 @@ body main .contact-me form button {
     grid-area: 1/1/2/2;
   }
   body main .portfolio .works #work2 {
-    background: url(/img/chcolateBarCover.png) center/cover no-repeat;
     background-clip: padding-box;
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
@@ -1559,7 +1549,6 @@ body main .contact-me form button {
     outline: 5px solid #303030;
   }
   body main .portfolio .works #work3 {
-    background: red center/cover no-repeat;
     background-clip: padding-box;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -1568,7 +1557,6 @@ body main .contact-me form button {
     grid-area: 1/1/2/2;
   }
   body main .portfolio .works #work4 {
-    background: black center/cover no-repeat;
     background-clip: padding-box;
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
@@ -1578,7 +1566,6 @@ body main .contact-me form button {
     outline: 5px solid #303030;
   }
   body main .portfolio .works #work5 {
-    background: blue center/cover no-repeat;
     background-clip: padding-box;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -1587,7 +1574,6 @@ body main .contact-me form button {
     grid-area: 1/1/2/2;
   }
   body main .portfolio .works #work6 {
-    background: yellow center/cover no-repeat;
     background-clip: padding-box;
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;

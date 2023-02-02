@@ -31,6 +31,26 @@
         {
             "title": "Github Pages",
             "article": "Today I put my To Do List in Github pages. Fist time my work somewhere in the Internet. Next step I will make a sending message from the form in my website and put it on pages too. Also I want remake my markup projects"
+        },
+        {
+            "title": "React",
+            "article": "I throw all my projectsto the Github pages and now I can show it to someone. Also I started to learn React. It is hard a little because i didn't have a lot practice with classes, but I can do it"
+        },
+        {
+            "title": "Pomodoro",
+            "article": "I started my first React project. It is pomodoro timer. I still confuse props and states and it is hard to choose should I use class in the component or I shouldn't, but I can handle it. I will be developer soon"
+        },
+        {
+            "title": "Pomodoro sequel",
+            "article": "Today I made main logic for pomodoro. I don't like code, it is ugly. But it's working. I should refactor this shit before show it someone. At least my methods should make only 1 move. And I should think about naming"
+        },
+        {
+            "title": "Pomodoro final",
+            "article": "Today I finished pomodoro. I had to rewrite almost all code, but now it doesn't look too bad. I also placed this project on Github Pages. While making pomodoro I found it is time for 'Clean code'. I must improve my code"
+        },
+        {
+            "title": "Redux",
+            "article": "Learning Redux. Creating project from course. Nothing interesting yet"
         }
     ]
 }

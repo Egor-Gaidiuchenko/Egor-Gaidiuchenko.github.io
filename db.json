@@ -51,6 +51,10 @@
         {
             "title": "Redux",
             "article": "Learning Redux. Creating project from course. Nothing interesting yet"
+        },
+        {
+            "title": "Hooks",
+            "article": "I paused React and deside to make project on React Hooks. It is pure pain. I have been looking for a bug about 3 hours. Looks like I know how to fix it now. When I cried about classes I was a sweet summer child"
         }
     ]
 }
